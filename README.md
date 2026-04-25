@@ -1,43 +1,115 @@
-# Personnel Leave Management System
+# 🚀 Personnel Leave Management System
 
-A full-stack leave management system built with Spring Boot and React.
+A fullstack leave management system built with **Spring Boot** and **React**.
 
-## 🚀 Features
+---
 
-- Employee leave request creation
-- Admin approval / rejection system
-- JWT-based authentication
-- Role-based authorization (ADMIN / USER)
-- Half-day leave support
-- Date validation (no weekends / past dates)
+## 📌 Overview
 
-## 🛠️ Tech Stack
+This project allows employees to create leave requests and admins to manage them.
+
+### 👤 Employee
+
+* Create leave request
+* Select date range
+* Optional half-day leave
+
+### 🛠️ Admin
+
+* View all requests
+* Approve / Reject requests
+
+---
+
+## 🧰 Tech Stack
 
 ### Backend
-- Spring Boot
-- Spring Security
-- JWT
-- H2 Database
+
+* Java 17
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* H2 Database
 
 ### Frontend
-- React
-- Material UI
-- Axios
 
-## 📸 Screens
+* React
+* Material UI
+* Axios
 
-- Employee leave form
-- Admin panel (approve / reject)
+---
 
-## 🔐 Authentication
+## ⚙️ How to Run
 
-- JWT token-based login
-- Protected endpoints
-- Role-based access control
+### 🔧 Backend
 
-## 🧠 Key Learnings
+```bash
+cd backend
+./mvnw spring-boot:run
+```
 
-- Fullstack architecture
-- REST API design
-- Authentication & authorization
-- State management in React
+👉 Runs on:
+
+```
+http://localhost:8080
+```
+
+---
+
+### 💻 Frontend
+
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+👉 Runs on:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🔐 Login
+
+```text
+username: admin
+password: 1234
+```
+
+---
+
+## 📊 Features
+
+* JWT-based authentication
+* Role-based access (ADMIN / USER)
+* Leave request creation
+* Admin approval system
+* Half-day leave support
+* Date validation (no weekends / past dates)
+
+---
+
+## 📁 Project Structure
+
+```
+personnel-leave-system/
+├── backend/
+└── frontend/
+```
+
+---
+
+## ⚠️ Notes
+
+* Uses H2 in-memory database
+* Data resets on restart
+* Development environment only
+
+---
+
+

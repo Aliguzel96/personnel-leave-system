@@ -1,115 +1,110 @@
-# 🚀 Personnel Leave Management System
+# Personnel Leave Management System
 
-A fullstack leave management system built with **Spring Boot** and **React**.
-
----
-
-## 📌 Overview
-
-This project allows employees to create leave requests and admins to manage them.
-
-### 👤 Employee
-
-* Create leave request
-* Select date range
-* Optional half-day leave
-
-### 🛠️ Admin
-
-* View all requests
-* Approve / Reject requests
+This project is a simple full-stack application developed as a technical case study.  
+It allows employees to submit leave requests and administrators to review and manage them.
 
 ---
 
-## 🧰 Tech Stack
+## 🚀 Live Demo
+
+Frontend: https://shiny-tapioca-9056ed.netlify.app  
+Backend API: https://personnel-leave-system-z1w7.onrender.com
+
+---
+
+## 🧩 Features
+
+### Employee (Public Access)
+- Submit leave requests without authentication
+- Select leave type (Annual, Sick, Personal)
+- Choose start and end dates
+- Add description
+- Form validation (required fields, date consistency)
+
+### Admin (Protected)
+- Secure login with JWT authentication
+- View all leave requests
+- Approve or reject requests
+- See leave duration
+
+---
+
+## 🛠️ Tech Stack
 
 ### Backend
-
-* Java 17
-* Spring Boot
-* Spring Security
-* JWT Authentication
-* H2 Database
+- Java Spring Boot
+- Spring Security
+- JWT Authentication
+- H2 Database (in-memory)
 
 ### Frontend
+- React
+- Material UI
+- Axios
 
-* React
-* Material UI
-* Axios
+### Deployment
+- Backend: Render
+- Frontend: Netlify
 
 ---
 
-## ⚙️ How to Run
+## 📡 API Endpoints
 
-### 🔧 Backend
+### Public
+- `POST /api/leaves` → Create a leave request
 
-```bash
+### Authentication
+- `POST /api/auth/login` → Returns JWT token
+
+### Admin (Protected)
+- `GET /api/leaves` → List all requests
+- `PUT /api/leaves/{id}` → Update leave status
+
+---
+
+## 🧪 Validation & Error Handling
+
+- Required fields validation (name, dates)
+- Start date cannot be after end date
+- API returns proper HTTP status codes
+- User-friendly error messages displayed on UI
+
+---
+
+## 🧠 Design Decisions
+
+- Public endpoint for submitting requests (no authentication required)
+- Admin-only access for viewing and updating requests
+- JWT used for stateless authentication
+- Separation of frontend and backend for scalability
+
+---
+
+## ▶️ Run Locally
+
+### Backend
 cd backend
+
 ./mvnw spring-boot:run
-```
 
-👉 Runs on:
 
-```
-http://localhost:8080
-```
-
----
-
-### 💻 Frontend
-
-Open a new terminal:
-
-```bash
+### Frontend
 cd frontend
+
 npm install
+
 npm start
-```
-
-👉 Runs on:
-
-```
-http://localhost:3000
-```
 
 ---
 
-## 🔐 Login
+## 📌 Notes
 
-```text
-username: admin
-password: 1234
-```
-
----
-
-## 📊 Features
-
-* JWT-based authentication
-* Role-based access (ADMIN / USER)
-* Leave request creation
-* Admin approval system
-* Half-day leave support
-* Date validation (no weekends / past dates)
+- Admin credentials are stored securely via environment variables
+- CORS configuration allows communication between deployed frontend and backend
+- SPA routing handled via Netlify redirects
 
 ---
 
-## 📁 Project Structure
+## 👨‍💻 Author
 
-```
-personnel-leave-system/
-├── backend/
-└── frontend/
-```
-
----
-
-## ⚠️ Notes
-
-* Uses H2 in-memory database
-* Data resets on restart
-* Development environment only
-
----
-
-
+Ali Güzel

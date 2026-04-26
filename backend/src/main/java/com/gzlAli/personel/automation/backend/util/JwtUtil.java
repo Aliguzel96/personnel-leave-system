@@ -18,7 +18,7 @@ public class JwtUtil {
     public String generate(String username) {
         return Jwts.builder()
                 .setSubject(username)
-                .claim("role", "ADMIN") // 👈 EKLE
+                .claim("role", "ADMIN")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
                 .signWith(key, SignatureAlgorithm.HS256)

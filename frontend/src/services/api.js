@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api"
+  baseURL: "https://personnel-leave-system-z1w7.onrender.com/api"
 });
 
 //interceptor

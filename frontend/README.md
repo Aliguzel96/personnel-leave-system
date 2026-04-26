@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Personnel Leave Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple full-stack application developed as a technical case study.  
+It allows employees to submit leave requests and administrators to review and manage them.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+Frontend: https://shiny-tapioca-9056ed.netlify.app  
+Backend API: https://personnel-leave-system-z1w7.onrender.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 Features
 
-### `npm test`
+### Employee (Public Access)
+- Submit leave requests without authentication
+- Select leave type (Annual, Sick, Personal)
+- Choose start and end dates
+- Add description
+- Form validation (required fields, date consistency)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Admin (Protected)
+- Secure login with JWT authentication
+- View all leave requests
+- Approve or reject requests
+- See leave duration
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- Java Spring Boot
+- Spring Security
+- JWT Authentication
+- H2 Database (in-memory)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Frontend
+- React
+- Material UI
+- Axios
 
 ### Deployment
+- Backend: Render
+- Frontend: Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📡 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Public
+- `POST /api/leaves` → Create a leave request
+
+### Authentication
+- `POST /api/auth/login` → Returns JWT token
+
+### Admin (Protected)
+- `GET /api/leaves` → List all requests
+- `PUT /api/leaves/{id}` → Update leave status
+
+---
+
+## 🧪 Validation & Error Handling
+
+- Required fields validation (name, dates)
+- Start date cannot be after end date
+- API returns proper HTTP status codes
+- User-friendly error messages displayed on UI
+
+---
+
+## 🧠 Design Decisions
+
+- Public endpoint for submitting requests (no authentication required)
+- Admin-only access for viewing and updating requests
+- JWT used for stateless authentication
+- Separation of frontend and backend for scalability
+
+---
+
+## ▶️ Run Locally
+
+### Backend
+cd backend
+
+./mvnw spring-boot:run
+
+
+### Frontend
+cd frontend
+
+npm install
+
+npm start
+
+---
+
+## 📌 Notes
+
+- Admin credentials are stored securely via environment variables
+- CORS configuration allows communication between deployed frontend and backend
+- SPA routing handled via Netlify redirects
+
+---
+
+## 👨‍💻 Author
+
+Ali Güzel

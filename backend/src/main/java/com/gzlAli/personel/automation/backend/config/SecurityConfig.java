@@ -33,7 +33,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**").permitAll()
 
                         // USER + ADMIN oluşturabilir
-                        .requestMatchers(HttpMethod.POST, "/api/leaves").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/api/leaves").permitAll()
 
                         // sadece ADMIN görebilir
                         .requestMatchers(HttpMethod.GET, "/api/leaves/**").hasRole("ADMIN")
